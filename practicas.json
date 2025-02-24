@@ -9,7 +9,8 @@
                 "Robótica",
                 "Matlab"
             ],
-            "autores": "global"
+            "autores": "global",
+            "date": "27 de enero de 2025"
         },
         {
             "folder": "practica2",
@@ -20,7 +21,20 @@
                 "Electrónica",
                 "Simulación"
             ],
-            "autores": "global"
+            "autores": "global",
+            "date": "10 de febrero de 2025"
+        },
+        {
+            "folder": "practica3",
+            "title": "Título de la Práctica 3",
+            "description": "Descripción de la práctica 3...",
+            "coverImage": "img/portada_tarea2.png",
+            "badges": [
+                "Electrónica",
+                "Simulación"
+            ],
+            "autores": "global",
+            "date": "17 de febrero de 2025"
         }
     ]
 }
