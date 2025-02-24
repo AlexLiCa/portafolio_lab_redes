@@ -2,39 +2,26 @@
     "practicas": [
         {
             "folder": "practica1",
-            "title": "A ver si esta jalando?",
-            "description": "SI este resumen aparece esta super bien hecho...",
+            "title": "Wifi ESP32 Entradas y Salidas Digitales",
+            "description": "Conocer, identificar y comprobar el funcionamiento de los sensores digitales, analógicos e inteligentes en el módulo NodeMCU ESP8266 o ESP32.",
             "coverImage": "img/portada_tarea1.png",
             "badges": [
-                "Robótica",
-                "Matlab"
+                "Introducción",
+                "Redes digitales"
             ],
             "autores": "global",
             "date": "27 de enero de 2025"
         },
         {
             "folder": "practica2",
-            "title": "Título de la Práctica 2",
-            "description": "Descripción de la práctica 2...",
+            "title": "ESP32 – Sensores Digitales, Analógicos e Inteligentes",
+            "description": "Conocer, identificar y comprobar el funcionamiento de los sensores digitales, analógicos e inteligentes en el módulo NodeMCU ESP8266 o ESP32",
             "coverImage": "img/portada_tarea2.png",
             "badges": [
                 "Electrónica",
-                "Simulación"
+                "Redes digitales"
             ],
             "autores": "global",
             "date": "10 de febrero de 2025"
-        },
-        {
-            "folder": "practica3",
-            "title": "Título de la Práctica 3",
-            "description": "Descripción de la práctica 3...",
-            "coverImage": "img/portada_tarea2.png",
-            "badges": [
-                "Electrónica",
-                "Simulación"
-            ],
-            "autores": "global",
-            "date": "1 de febrero de 2025"
-        }
-    ]
+        }    ]
 }
