@@ -1,0 +1,26 @@
+{
+    "practicas": [
+        {
+            "folder": "practica1",
+            "title": "Título de la Práctica 1",
+            "description": "Breve resumen de la práctica 1...",
+            "coverImage": "img/portada_tarea1.png",
+            "badges": [
+                "Robótica",
+                "Matlab"
+            ],
+            "autores": "global"
+        },
+        {
+            "folder": "practica2",
+            "title": "Título de la Práctica 2",
+            "description": "Descripción de la práctica 2...",
+            "coverImage": "img/portada_tarea2.png",
+            "badges": [
+                "Electrónica",
+                "Simulación"
+            ],
+            "autores": "global"
+        }
+    ]
+}

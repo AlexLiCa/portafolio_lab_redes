@@ -21,6 +21,12 @@
   z-index: 10;
 }
 
+#autores-container .card-body {
+  white-space: normal !important;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
 /* Declare heights because of positioning of img element */
 .carousel-item {
   height: 20rem;
