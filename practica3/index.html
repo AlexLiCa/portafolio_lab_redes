@@ -53,23 +53,21 @@
             </div>
         </header>
 
-        <!-- Encabezado de la práctica (generado dinámicamente) -->
+        <!-- Encabezado de la práctica (datos dinámicos desde practicas.json y autores.js) -->
         <section class="py-3" id="scroll-target">
             <div class="container px-5 my-2">
                 <header class="mb-4">
-                    <!-- El título se carga dinámicamente -->
+                    <!-- Título de la práctica -->
                     <h1 id="practica-title" class="fw-bolder mb-1">Cargando título...</h1>
-                    <!-- Sección de autores (generada dinámicamente) -->
+                    <!-- Sección de autores -->
                     <div class="row" id="header-autores">
-                        <!-- Aquí se insertarán columnas para cada autor -->
+                        <!-- Se inyectarán columnas para cada autor -->
                     </div>
                     <!-- Fecha -->
-                    <div id="practica-date" class="text-muted fst-italic mt-2 mb-2">
-                        Fecha: Mes día, Año
-                    </div>
-                    <!-- Etiquetas o badges -->
+                    <div id="practica-date" class="text-muted fst-italic mt-2 mb-2">Fecha: Cargando...</div>
+                    <!-- Etiquetas / Badges -->
                     <div id="practica-badges">
-                        <!-- Se insertarán los badges dinámicamente -->
+                        <!-- Se inyectarán los badges -->
                     </div>
                 </header>
             </div>
@@ -79,78 +77,53 @@
         <section>
             <div class="container px-5">
                 <figure class="mb-4">
-                    <img class="img-fluid rounded" width="800px" src="img/web.jpg" alt="Imagen representativa" />
+                    <img id="coverImage" class="img-fluid rounded" width="800px" src="img/web.jpg"
+                        alt="Imagen representativa" />
                 </figure>
 
+                <!-- Sección Resumen (actualizado desde practicas.json) -->
                 <div id="resumen">
-                    <h2 class="fw-bolder mb-4 mt-5 fs-5">- Resumen -</h2>
-                    <p class="fs-6 mb-4">[Contenido del resumen...]</p>
-                    <p class="fs-6 mb-4">[Más párrafos del resumen...]</p>
+                    <h2 class="fw-bolder mb-4 mt-5 fs-5">Resumen</h2>
+                    <p id="resumen-content" class="fs-6 mb-4">Cargando resumen...</p>
                 </div>
 
+                <!-- Secciones que se actualizarán desde Configuration.json -->
                 <div id="intro">
-                    <h2 class="fw-bolder mb-4 mt-5 fs-5">- Introducción -</h2>
-                    <p class="fs-6 mb-4">[Contenido de la introducción...]</p>
+                    <h2 class="fw-bolder mb-4 mt-5 fs-5">Introducción</h2>
+                    <p class="fs-6 mb-4">Cargando introducción...</p>
                 </div>
 
                 <div id="materiales">
-                    <h2 class="fw-bolder mb-4 mt-5 fs-5">- Materiales -</h2>
-                    <p class="fs-6 mb-4">[Lista de materiales...]</p>
+                    <h2 class="fw-bolder mb-4 mt-5 fs-5">Materiales</h2>
+                    <p class="fs-6 mb-4">Cargando materiales...</p>
                 </div>
 
                 <div id="desarrollo">
-                    <h2 class="fw-bolder mb-4 mt-5 fs-5">- Desarrollo -</h2>
-                    <p class="fs-6 mb-4">[Contenido del desarrollo...]</p>
+                    <h2 class="fw-bolder mb-4 mt-5 fs-5">Desarrollo</h2>
+                    <p class="fs-6 mb-4">Cargando desarrollo...</p>
                 </div>
 
-                <div id="resultados">
-                    <h2 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h2>
-                    <p class="fs-6 mb-4">[Contenido de los resultados...]</p>
-                    <figure class="mb-4" align="center">
-                        <video width="80%" controls>
-                            <source src="video/Robot.mp4" type="video/mp4">
-                        </video>
-                    </figure>
-                </div>
 
-                <!-- Sección de Código -->
-                <div id="codigo">
-                    <h2 class="fw-bolder mb-4 mt-5 fs-5">- Código -</h2>
-                    <pre class="fs-6 mb-4"
-                        style="background-color:#f5f5f5; padding:1rem; border-radius:4px; overflow-x:auto;">
-<code>
-// Ejemplo de código de la práctica
-#include <Arduino.h>
 
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  Serial.println("Hola, mundo");
-}
-</code>
-            </pre>
-                </div>
-
+                <!-- Sección de Contenido Específico (paginado con pestañas) -->
+                <section id="contenido-paginado" class="mt-5">
+                    <div class="container">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">Contenido Específico</h2>
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" id="configurationTabs" role="tablist">
+                            <!-- Se inyectarán los botones de pestañas dinámicamente -->
+                        </ul>
+                        <!-- Tab content -->
+                        <div class="tab-content" id="configurationTabContent">
+                            <!-- Se inyectarán los contenidos de cada pestaña -->
+                        </div>
+                    </div>
+                </section>
                 <div id="conclusiones">
                     <h2 class="fw-bolder mb-4 mt-5 fs-5">- Conclusiones -</h2>
-                    <p class="fs-6 mb-4">[Contenido de las conclusiones...]</p>
+                    <p class="fs-6 mb-4">Cargando conclusiones...</p>
                 </div>
 
-                <div id="referencias">
-                    <h2 class="fw-bolder mb-4 mt-5 fs-5">- Referencias -</h2>
-                    <p class="fs-6 mb-4">[Listado de referencias...]</p>
-                </div>
-
-                <div id="descargables">
-                    <h2 class="fw-bolder mb-4 mt-5 fs-5">- Descargables -</h2>
-                    <p class="fs-6 mb-4">Descargar documento PDF: <a href="files/Documento.pdf">documento.pdf</a></p>
-                    <p class="fs-6 mb-4">Descargar código Arduino: <a
-                            href="files/Ejemplo_arduino_bluetooth.ino">codigo.ino</a></p>
-                    <p class="fs-6 mb-4">Descargar Archivo 3D (.STL): <a href="files/Pieza_3D.STL">pieza.stl</a></p>
-                </div>
-            </div>
         </section>
     </main>
 
@@ -174,59 +147,8 @@ void loop() {
 
     <!-- Cargar el archivo de autores (ubicado en la raíz) -->
     <script src="../autores.js"></script>
-
-    <!-- Código JavaScript para generar dinámicamente el encabezado -->
-    <script>
-        // Extraer el nombre de la práctica desde la URL.
-        // Para una URL como: http://127.0.0.1:8080/practica1/ se espera que el primer segmento sea "practica1".
-        const pathParts = window.location.pathname.split('/').filter(part => part !== '');
-        const practiceFolder = pathParts[0];
-
-        // Cargar el JSON de prácticas desde la carpeta raíz (por eso "../")
-        fetch('../practicas.json')
-            .then(response => response.json())
-            .then(data => {
-                const practicas = data.practicas;
-                const currentPractice = practicas.find(p => p.folder === practiceFolder);
-                if (currentPractice) {
-                    // Actualizar el título y la fecha
-                    document.getElementById('practica-title').textContent = currentPractice.title;
-                    document.getElementById('practica-date').textContent = "Fecha: " + currentPractice.date;
-                    // Generar badges
-                    const badgesContainer = document.getElementById('practica-badges');
-                    currentPractice.badges.forEach(badge => {
-                        const badgeElement = document.createElement('a');
-                        badgeElement.className = "badge bg-primary text-decoration-none link-light me-1";
-                        badgeElement.textContent = badge;
-                        badgesContainer.appendChild(badgeElement);
-                    });
-                } else {
-                    console.error("No se encontró la práctica para el folder:", practiceFolder);
-                }
-            })
-            .catch(error => console.error('Error al cargar practicas.json:', error));
-
-        // Una vez cargado el DOM, generar la sección de autores usando la variable global "autoresGlobales"
-        document.addEventListener("DOMContentLoaded", function () {
-            const headerAutores = document.getElementById('header-autores');
-            if (typeof autoresGlobales !== "undefined") {
-                autoresGlobales.forEach(author => {
-                    const col = document.createElement('div');
-                    col.className = "col text-center";
-                    // Como la página está en "practica1", para acceder a "assets" en la raíz se antepone "../"
-                    col.innerHTML = `
-              <img class="img-fluid rounded-circle mb-2" width="50" src="../${author.image}" alt="${author.name}">
-              <div class="fw-bold">${author.name}</div>
-              <div class="text-muted">${author.carrera}</div>
-            `;
-                    headerAutores.appendChild(col);
-                });
-            } else {
-                console.error("La variable autoresGlobales no está definida.");
-            }
-        });
-    </script>
-
+    <!-- Importar nuestro script externo con la lógica dinámica -->
+    <script src="js/practica.js"></script>
     <!-- Bootstrap core JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS -->

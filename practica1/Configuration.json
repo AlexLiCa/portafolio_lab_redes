@@ -1,39 +1,111 @@
 {
     "general": {
-        "introduccion": "Esta es la introducción de la práctica, donde se contextualiza el trabajo.",
-        "materiales": "Se utilizaron: placa Arduino, sensores, cables, etc.",
-        "desarrollo": "Se realizaron diversas pruebas y se documentaron cada uno de los pasos del desarrollo.",
-        "conclusiones": "Las conclusiones se basan en el análisis de los resultados obtenidos y la comparación con los objetivos planteados."
+        "coverImage": "img/foco_4.png",
+        "introduccion": "En la actualidad, el uso de microcontroladores con conectividad WiFi ha cobrado gran relevancia en diversas aplicaciones, desde el Internet de las Cosas (IoT) hasta sistemas embebidos avanzados. En esta práctica, se explorará el funcionamiento de las entradas y salidas digitales en el módulo NodeMCU ESP8266 o ESP32. Estos dispositivos permiten la programación en el entorno de desarrollo Arduino IDE, facilitando la configuración y manipulación de pines de entrada y salida para el control de dispositivos externos como LEDs y botones.",
+        "materiales": "NodeMCU ESP8266 o ESP32, LED, Resistencia de 220 Ohms, 4 Botones, 4 Resistencias de 1K Ohm, Protoboard, Cables de conexión",
+        "desarrollo": "Se configuro el ESP32 para que actuara dependiendo de lo que recibe en sus pines , desde encender un foco a hacer que actue dependiendo de si se cumple una funcion .",
+        "conclusiones": "En este caso podemos ver que el ESP32 es capaz de recibir y actuar sobre las señales que tiene en sus pines."
     },
     "tabs": [
         {
-            "title": "Multimedia",
+            "title": "Programa de encendido de un LED",
             "slides": [
                 {
                     "type": "image",
-                    "src": "img/ne555.png",
+                    "src": "img/foco_1.png",
                     "description": "Esta imagen muestra la configuración inicial del circuito."
                 },
                 {
                     "type": "video",
-                    "src": "video/robot.mp4",
+                    "src": "video/video_1.mp4",
                     "description": "Video demostrativo del funcionamiento del prototipo."
+                },
+                {
+                    "type": "code",
+                    "language": "c",
+                    "code": "void setup() {\n  // put your setup code here, to run once:\n  pinMode(23, OUTPUT);\n}\n\nvoid loop() {\n  digitalWrite(23, HIGH);\n}",
+                    "description": "Configuración del pin 23 como salida y manteniéndolo en estado alto."
                 }
             ]
         },
         {
-            "title": "Código & Desarrollo",
+            "title": "Desarrollar un programa de apagado de un LED.",
             "slides": [
                 {
-                    "type": "code",
-                    "language": "arduino",
-                    "code": "#include <Arduino.h>\n\nvoid setup() {\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  Serial.println(\"Hola, mundo\");\n}",
-                    "description": "Fragmento de código para inicializar la comunicación serial."
+                    "type": "image",
+                    "src": "img/foco_1.png",
+                    "description": "Esta imagen muestra la configuración inicial del circuito."
                 },
                 {
-                    "type": "development",
-                    "content": "Aquí se explica el proceso de montaje y pruebas realizadas en detalle.",
-                    "description": "Explicación detallada del desarrollo y pruebas."
+                    "type": "video",
+                    "src": "video/video_2.mp4",
+                    "description": "Video demostrativo del funcionamiento del prototipo."
+                },
+                {
+                    "type": "code",
+                    "language": "c",
+                    "code": "void setup() {\n  // put your setup code here, to run once:\n  pinMode(23, OUTPUT);\n}\n\nvoid loop() {\n  digitalWrite(23, LOW);\n}",
+                    "description": "Configuración del pin 23 como salida y manteniéndolo en estado bajo."
+                }
+            ]
+        },
+        {
+            "title": "Encendido y apagado de un LED mediante retardos.",
+            "slides": [
+                {
+                    "type": "image",
+                    "src": "img/foco_1.png",
+                    "description": "Esta imagen muestra la configuración inicial del circuito."
+                },
+                {
+                    "type": "video",
+                    "src": "video/video_3.mp4",
+                    "description": "Video demostrativo del funcionamiento del prototipo."
+                },
+                {
+                    "type": "code",
+                    "language": "c",
+                    "code": "void setup() {\n  // put your setup code here, to run once:\n  pinMode(23, OUTPUT);\n}\n\nvoid loop() {\n  digitalWrite(23, HIGH);\n}",
+                    "description": "Configuración del pin 23 como salida y manteniéndolo en estado alto."
+                }
+            ]
+        },
+        {
+            "title": "Encendido y apagado de un LED mediante el uso de botones.",
+            "slides": [
+                {
+                    "type": "image",
+                    "src": "img/foco_4.png",
+                    "description": "Esta imagen muestra la configuración inicial del circuito."
+                },
+                {
+                    "type": "video",
+                    "src": "video/video_4.mp4",
+                    "description": "Video demostrativo del funcionamiento del prototipo."
+                },
+                {
+                    "type": "code",
+                    "language": "c",
+                    "code": "void setup() {\n  // put your setup code here, to run once:\n  pinMode(23, OUTPUT);\n}\n\nvoid loop() {\n  digitalWrite(23, HIGH);\n}",
+                    "description": "Configuración del pin 23 como salida y manteniéndolo en estado alto."
+                },
+                {
+                    "type": "code",
+                    "language": "c",
+                    "code": "void setup() {\n  // put your setup code here, to run once:\n  pinMode(23, OUTPUT);\n  pinMode(21, INPUT);\n}\n\nvoid loop() {\n  digitalWrite(23, digitalRead(21));\n}",
+                    "description": "Configuración del pin 23 como salida y el pin 21 como entrada. El estado del pin 21 se replica en el pin 23, aqui usamos botones para la practica."
+                },
+                {
+                    "type": "code",
+                    "language": "c",
+                    "code": "void setup() {\n  // put your setup code here, to run once:\n  pinMode(23, OUTPUT);\n  pinMode(21, INPUT);\n  pinMode(22, INPUT);\n}\n\nvoid loop() {\n  int switch1 = digitalRead(21);\n  int switch2 = digitalRead(22);\n  if (switch1 || switch2){\n    digitalWrite(23, HIGH);\n  }else{\n    digitalWrite(23, LOW);\n  }\n}",
+                    "description": "Configuración del pin 23 como salida y los pines 21 y 22 como entradas. Si alguno de los interruptores está activado, el pin 23 se enciende."
+                },
+                {
+                    "type": "code",
+                    "language": "c",
+                    "code": "void setup() {\n  // put your setup code here, to run once:\n  pinMode(23, OUTPUT);\n  pinMode(21, INPUT);\n  pinMode(22, INPUT);\n}\n\nvoid loop() {\n  int switch1 = digitalRead(21);\n  int switch2 = digitalRead(22);\n  if (switch1 && switch2){\n    digitalWrite(23, HIGH);\n  }else{\n    digitalWrite(23, LOW);\n  }\n}",
+                    "description": "Configuración del pin 23 como salida y los pines 21 y 22 como entradas. El pin 23 se enciende solo si ambos interruptores están activados."
                 }
             ]
         }

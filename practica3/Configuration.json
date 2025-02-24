@@ -1,0 +1,42 @@
+{
+    "general": {
+        "coverImage": "img/ne555.png",
+        "introduccion": "Esta es la introducción de la práctica, donde se contextualiza el trabajo.",
+        "materiales": "Se utilizaron: placa Arduino, sensores, cables, etc.",
+        "desarrollo": "Se realizaron diversas pruebas y se documentaron cada uno de los pasos del desarrollo.",
+        "conclusiones": "Las conclusiones se basan en el análisis de los resultados obtenidos y la comparación con los objetivos planteados."
+    },
+    "tabs": [
+        {
+            "title": "Multimedia",
+            "slides": [
+                {
+                    "type": "image",
+                    "src": "img/ne555.png",
+                    "description": "Esta imagen muestra la configuración inicial del circuito."
+                },
+                {
+                    "type": "video",
+                    "src": "video/robot.mp4",
+                    "description": "Video demostrativo del funcionamiento del prototipo."
+                }
+            ]
+        },
+        {
+            "title": "Código & Desarrollo",
+            "slides": [
+                {
+                    "type": "code",
+                    "language": "arduino",
+                    "code": "#include <Arduino.h>\n\nvoid setup() {\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  Serial.println(\"Hola, mundo\");\n}",
+                    "description": "Fragmento de código para inicializar la comunicación serial."
+                },
+                {
+                    "type": "development",
+                    "content": "Aquí se explica el proceso de montaje y pruebas realizadas en detalle.",
+                    "description": "Explicación detallada del desarrollo y pruebas."
+                }
+            ]
+        }
+    ]
+}

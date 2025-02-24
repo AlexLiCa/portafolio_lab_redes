@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Práctica | Ibero Puebla</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <!-- Bootstrap icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (incluye Bootstrap) -->
+    <link href="../css/styles.css" rel="stylesheet" />
+</head>
+
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container px-5">
+                <a class="navbar-brand">Menu</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="../">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#resumen">Acerca de mi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../index.html#practicas">Prácticas</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Encabezado general del portafolio -->
+        <header class="bg-primary py-2 mt-6">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center justify-content-center">
+                    <div class="col-lg-8 col-xl-7 col-xxl-6">
+                        <div class="my-5 text-center text-xl-start">
+                            <h1 class="display-6 fw-bolder text-white mb-2">Portafolio de Actividades</h1>
+                            <h2 class="display-8 fw-bolder text-white mb-2">Introducción a Ing. Mecatrónica</h2>
+                            <p class="display-8 fw-normal text-white-50 mb-4">
+                                Departamento de Ciencias e Ingenierías | Universidad Iberoamericana Puebla, México.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Encabezado de la práctica (datos dinámicos desde practicas.json y autores.js) -->
+        <section class="py-3" id="scroll-target">
+            <div class="container px-5 my-2">
+                <header class="mb-4">
+                    <!-- Título de la práctica -->
+                    <h1 id="practica-title" class="fw-bolder mb-1">Cargando título...</h1>
+                    <!-- Sección de autores -->
+                    <div class="row" id="header-autores">
+                        <!-- Se inyectarán columnas para cada autor -->
+                    </div>
+                    <!-- Fecha -->
+                    <div id="practica-date" class="text-muted fst-italic mt-2 mb-2">Fecha: Cargando...</div>
+                    <!-- Etiquetas / Badges -->
+                    <div id="practica-badges">
+                        <!-- Se inyectarán los badges -->
+                    </div>
+                </header>
+            </div>
+        </section>
+
+        <!-- Contenido de la práctica -->
+        <section>
+            <div class="container px-5">
+                <figure class="mb-4">
+                    <img id="coverImage" class="img-fluid rounded" width="800px" src="img/web.jpg"
+                        alt="Imagen representativa" />
+                </figure>
+
+                <!-- Sección Resumen (actualizado desde practicas.json) -->
+                <div id="resumen">
+                    <h2 class="fw-bolder mb-4 mt-5 fs-5">Resumen</h2>
+                    <p id="resumen-content" class="fs-6 mb-4">Cargando resumen...</p>
+                </div>
+
+                <!-- Secciones que se actualizarán desde Configuration.json -->
+                <div id="intro">
+                    <h2 class="fw-bolder mb-4 mt-5 fs-5">Introducción</h2>
+                    <p class="fs-6 mb-4">Cargando introducción...</p>
+                </div>
+
+                <div id="materiales">
+                    <h2 class="fw-bolder mb-4 mt-5 fs-5">Materiales</h2>
+                    <p class="fs-6 mb-4">Cargando materiales...</p>
+                </div>
+
+                <div id="desarrollo">
+                    <h2 class="fw-bolder mb-4 mt-5 fs-5">Desarrollo</h2>
+                    <p class="fs-6 mb-4">Cargando desarrollo...</p>
+                </div>
+
+
+
+                <!-- Sección de Contenido Específico (paginado con pestañas) -->
+                <section id="contenido-paginado" class="mt-5">
+                    <div class="container">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">Contenido Específico</h2>
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" id="configurationTabs" role="tablist">
+                            <!-- Se inyectarán los botones de pestañas dinámicamente -->
+                        </ul>
+                        <!-- Tab content -->
+                        <div class="tab-content" id="configurationTabContent">
+                            <!-- Se inyectarán los contenidos de cada pestaña -->
+                        </div>
+                    </div>
+                </section>
+                <div id="conclusiones">
+                    <h2 class="fw-bolder mb-4 mt-5 fs-5">- Conclusiones -</h2>
+                    <p class="fs-6 mb-4">Cargando conclusiones...</p>
+                </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto">
+                    <div class="small m-0 text-white">Copyright &copy; Ingenierias-iberopuebla.mx 2023</div>
+                </div>
+                <div class="col-auto">
+                    <a class="link-light small" href="#!">Privacy</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="#!">Terms</a>
+                    <span class="text-white mx-1">&middot;</span>
+                    <a class="link-light small" href="#!">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cargar el archivo de autores (ubicado en la raíz) -->
+    <script src="../autores.js"></script>
+    <!-- Importar nuestro script externo con la lógica dinámica -->
+    <script src="js/practica.js"></script>
+    <!-- Bootstrap core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS -->
+    <script src="../js/scripts.js"></script>
+</body>
+
+</html>
