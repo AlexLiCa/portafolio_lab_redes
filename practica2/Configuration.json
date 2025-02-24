@@ -1,6 +1,6 @@
 {
     "general": {
-        "coverImage": "img/foto_1.png",
+        "coverImage": "img/foto_3.png",
         "introduccion": "En la actualidad, el uso de microcontroladores con conectividad WiFi ha cobrado gran relevancia en diversas aplicaciones, desde el Internet de las Cosas (IoT) hasta sistemas embebidos avanzados. En esta práctica, se explorará el funcionamiento de los sensores digitales, analógicos e inteligentes en el módulo NodeMCU ESP8266 o ESP32. Estos dispositivos permiten la programación en el entorno de desarrollo Arduino IDE, facilitando la configuración y manipulación de pines de entrada y salida para el control y monitoreo de sensores.",
         "materiales": "NodeMCU ESP8266 o ESP32, LED, Resistencia de 220 Ohms, Botón, Resistencia de 1K Ohm, Sensores: Potenciómetro, DHT22, PIR, Protoboard, Cables de conexión",
         "desarrollo": "Se configuró el ESP32 en el simulador WOKWI para probar los sensores digitales, analógicos e inteligentes antes de su implementación en hardware. Se realizaron pruebas con un botón, un potenciómetro y un sensor DHT22 para medir temperatura y humedad. Posteriormente, se implementó un sensor PIR para la detección de movimiento y se validó su funcionamiento mediante la activación de un LED.",

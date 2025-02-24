@@ -1,5 +1,5 @@
 (function () {
-  // Extraer el nombre de la práctica desde la URL (se asume formato: http://dominio/practica1/)
+  // Extraer el nombre de la práctica desde la URL (formato: http://dominio/practica1/)
   const pathParts = window.location.pathname
     .split("/")
     .filter((part) => part !== "");
@@ -20,7 +20,7 @@
             currentPractice.title;
           document.getElementById("practica-date").textContent =
             "Fecha: " + currentPractice.date;
-          // Actualizar el resumen (con "description") usando una card con fondo rojo
+          // Actualizar el resumen (usando una card con fondo rojo)
           document.getElementById("resumen").innerHTML = `
             <div class="card-header bg-danger text-white">- Resumen -</div>
             <div class="card-body">
@@ -69,14 +69,14 @@
       .then((response) => response.json())
       .then((data) => {
         // Actualizar la imagen de portada, si se define
-        if (data.coverImage) {
+        if (data.general.coverImage) {
           const coverImg = document.getElementById("coverImage");
           if (coverImg) {
-            coverImg.setAttribute("src", data.coverImage);
+            coverImg.setAttribute("src", data.general.coverImage);
           }
         }
 
-        // Actualizar secciones generales (Introducción, Materiales, Desarrollo, Conclusiones)
+        // Actualizar secciones generales del contenido específico:
         if (data.general) {
           const introElem = document.getElementById("intro");
           if (introElem) {
@@ -108,7 +108,7 @@
           }
         }
 
-        // Generar las pestañas para el "Contenido Específico"
+        // Generar las pestañas (tabs) para el "Contenido Específico"
         if (data.tabs && Array.isArray(data.tabs)) {
           const tabsContainer = document.getElementById("configurationTabs");
           const tabContentContainer = document.getElementById(

@@ -69,10 +69,10 @@
       .then((response) => response.json())
       .then((data) => {
         // Actualizar la imagen de portada, si se define
-        if (data.coverImage) {
+        if (data.general.coverImage) {
           const coverImg = document.getElementById("coverImage");
           if (coverImg) {
-            coverImg.setAttribute("src", data.coverImage);
+            coverImg.setAttribute("src", data.general.coverImage);
           }
         }
 
