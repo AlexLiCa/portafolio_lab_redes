@@ -2,7 +2,7 @@
     "practicas": [
         {
             "folder": "practica1",
-            "title": "Título de la Práctica 1",
+            "title": "A ver si esta jalando?",
             "description": "Breve resumen de la práctica 1...",
             "coverImage": "img/portada_tarea1.png",
             "badges": [
@@ -34,7 +34,7 @@
                 "Simulación"
             ],
             "autores": "global",
-            "date": "17 de febrero de 2025"
+            "date": "1 de febrero de 2025"
         }
     ]
 }
