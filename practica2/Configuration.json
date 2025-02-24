@@ -1,40 +1,93 @@
 {
     "general": {
-        "coverImage": "img/ne555.png",
-        "introduccion": "Esta es la introducción de la práctica, donde se contextualiza el trabajo.",
-        "materiales": "Se utilizaron: placa Arduino, sensores, cables, etc.",
-        "desarrollo": "Se realizaron diversas pruebas y se documentaron cada uno de los pasos del desarrollo.",
-        "conclusiones": "Las conclusiones se basan en el análisis de los resultados obtenidos y la comparación con los objetivos planteados."
+        "coverImage": "img/foto_1.png",
+        "introduccion": "En la actualidad, el uso de microcontroladores con conectividad WiFi ha cobrado gran relevancia en diversas aplicaciones, desde el Internet de las Cosas (IoT) hasta sistemas embebidos avanzados. En esta práctica, se explorará el funcionamiento de los sensores digitales, analógicos e inteligentes en el módulo NodeMCU ESP8266 o ESP32. Estos dispositivos permiten la programación en el entorno de desarrollo Arduino IDE, facilitando la configuración y manipulación de pines de entrada y salida para el control y monitoreo de sensores.",
+        "materiales": "NodeMCU ESP8266 o ESP32, LED, Resistencia de 220 Ohms, Botón, Resistencia de 1K Ohm, Sensores: Potenciómetro, DHT22, PIR, Protoboard, Cables de conexión",
+        "desarrollo": "Se configuró el ESP32 en el simulador WOKWI para probar los sensores digitales, analógicos e inteligentes antes de su implementación en hardware. Se realizaron pruebas con un botón, un potenciómetro y un sensor DHT22 para medir temperatura y humedad. Posteriormente, se implementó un sensor PIR para la detección de movimiento y se validó su funcionamiento mediante la activación de un LED.",
+        "conclusiones": "En esta práctica, se demostró la capacidad del ESP32 para interactuar con distintos tipos de sensores y procesar señales digitales y analógicas. Se comprobó que el microcontrolador puede tomar decisiones en función de los datos adquiridos, lo que permite su aplicación en proyectos de automatización y monitoreo."
     },
     "tabs": [
         {
-            "title": "Multimedia",
+            "title": "Sensor digital",
             "slides": [
                 {
                     "type": "image",
-                    "src": "img/ne555.png",
+                    "src": "img/foto_1.png",
                     "description": "Esta imagen muestra la configuración inicial del circuito."
                 },
                 {
                     "type": "video",
-                    "src": "video/robot.mp4",
+                    "src": "video/video_1.mp4",
                     "description": "Video demostrativo del funcionamiento del prototipo."
+                },
+                {
+                    "type": "code",
+                    "language": "c",
+                    "code": "// Puertos GPIO\nint boton = 33;\nint led = 32;\n\n// Variables status\nint status_boton = 0;\n\nvoid setup() {\n  // Configurar el puerto 32 como salida\n  pinMode(led, OUTPUT);\n  // Configurar el puerto 33 como entrada\n  pinMode(boton, INPUT);\n}\n\nvoid loop() {\n  // Leer el estado del botón\n  status_boton = digitalRead(boton);\n\n  if (status_boton == 1) {\n    digitalWrite(led, HIGH);\n  } else {\n    digitalWrite(led, LOW);\n  }\n}",
+                    "description": "Control de un LED con un botón. El LED en el pin 32 se enciende cuando el botón en el pin 33 es presionado."
                 }
             ]
         },
         {
-            "title": "Código & Desarrollo",
+            "title": "Sensor analógico ",
             "slides": [
                 {
-                    "type": "code",
-                    "language": "arduino",
-                    "code": "#include <Arduino.h>\n\nvoid setup() {\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  Serial.println(\"Hola, mundo\");\n}",
-                    "description": "Fragmento de código para inicializar la comunicación serial."
+                    "type": "image",
+                    "src": "img/foto_2.png",
+                    "description": "Esta imagen muestra la configuración inicial del circuito."
                 },
                 {
-                    "type": "development",
-                    "content": "Aquí se explica el proceso de montaje y pruebas realizadas en detalle.",
-                    "description": "Explicación detallada del desarrollo y pruebas."
+                    "type": "video",
+                    "src": "video/video_2.mp4",
+                    "description": "Video demostrativo del funcionamiento del prototipo."
+                },
+                {
+                    "type": "code",
+                    "language": "c",
+                    "code": "// Puertos GPIO\nint pot = 33;\nint led = 32;\n\n// Variables status\nint valor_analogico = 0;\n\nvoid setup() {\n  // Configurar el puerto 32 como salida\n  pinMode(led, OUTPUT);\n  // Serial.begin(115200); // Habilitar si se requiere depuración por puerto serie\n}\n\nvoid loop() {\n  // Leer el valor analógico del potenciómetro\n  valor_analogico = analogRead(pot);\n\n  // Serial.println(valor_analogico); // Habilitar si se requiere ver el valor leído\n\n  if (valor_analogico > 2048) {\n    digitalWrite(led, HIGH);\n  } else {\n    digitalWrite(led, LOW);\n  }\n}",
+                    "description": "Control de un LED con un potenciómetro. El LED en el pin 32 se enciende si el valor del potenciómetro en el pin 33 supera 2048."
+                }
+            ]
+        },
+        {
+            "title": "Sensor inteligente ",
+            "slides": [
+                {
+                    "type": "image",
+                    "src": "img/foco_4.png",
+                    "description": "Esta imagen muestra la configuración inicial del circuito."
+                },
+                {
+                    "type": "video",
+                    "src": "video/video_4.mp4",
+                    "description": "Video demostrativo del funcionamiento del prototipo."
+                },
+                {
+                    "type": "code",
+                    "language": "c",
+                    "code": "// Librerías\n#include <DHT.h>\n\n// Puertos GPIO\nint led = 32;\n\n// DHT22\nDHT dht(33, DHT22); // DHTPIN, DHTTYPE\n\n// Variables status\nint valor_temperatura = 0;\nint valor_humedad = 0;\n\nvoid setup() {\n  // Configurar puerto 32 como salida\n  pinMode(led, OUTPUT);\n  dht.begin(); // Inicializamos DHT\n  Serial.begin(115200);\n}\n\nvoid loop() {\n  // Esperar 1 segundo entre lecturas\n  delay(1000);\n  valor_temperatura = dht.readTemperature();\n  valor_humedad = dht.readHumidity();\n\n  Serial.print(\"Temperatura:\");\n  Serial.println(valor_temperatura);\n  Serial.print(\"Humedad:\");\n  Serial.println(valor_humedad);\n\n  if (valor_humedad > 50) { // Si la humedad es mayor a 50%\n    digitalWrite(led, HIGH);\n  } else {\n    digitalWrite(led, LOW);\n  }\n}",
+                    "description": "Lectura de temperatura y humedad con un sensor DHT22. Si la humedad supera el 50%, se enciende un LED en el pin 32."
+                }
+            ]
+        },
+        {
+            "title": "Sensor digital PIR",
+            "slides": [
+                {
+                    "type": "image",
+                    "src": "img/foco_3.png",
+                    "description": "Esta imagen muestra la configuración inicial del circuito."
+                },
+                {
+                    "type": "video",
+                    "src": "video/video_3.mp4",
+                    "description": "Video demostrativo del funcionamiento del prototipo."
+                },
+                {
+                    "type": "code",
+                    "language": "c",
+                    "code": "// Puertos GPIO\nint pirPin = 33;     // Pin de salida del PIR conectado al GPIO 33\nint ledPin = 32;     // LED conectado al GPIO 32\nint estadoPIR = 0;   // Estado inicial del PIR\n\nvoid setup() {\n  pinMode(ledPin, OUTPUT);    // Configurar LED como salida\n  pinMode(pirPin, INPUT);     // Configurar PIR como entrada\n  Serial.begin(115200);       // Iniciar comunicación serial\n}\n\nvoid loop() {\n  estadoPIR = digitalRead(pirPin);  // Leer el estado del sensor PIR\n\n  if (estadoPIR == HIGH) {          // Si detecta movimiento\n    digitalWrite(ledPin, HIGH);     // Encender LED\n    Serial.println(\"Movimiento detectado!\");\n  } \n  else {\n    digitalWrite(ledPin, LOW);      // Apagar LED\n    Serial.println(\"Sin movimiento.\");\n  }\n\n  delay(1000);  // Esperar 1 segundo antes de leer de nuevo\n}",
+                    "description": "Detección de movimiento con un sensor PIR en el pin 33. Si detecta movimiento, enciende un LED en el pin 32 y muestra un mensaje en el monitor serie."
                 }
             ]
         }
