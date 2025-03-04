@@ -6,7 +6,7 @@ const autoresGlobales = [
     carrera: "Ingenieria en sistemas computacionales",
   },
   {
-    name: "Erick Alberto Fischer Juárez",
+    name: "Erick Alberto Fischer Juárez :)",
     image: "assets/Erick.jpg",
     email: "erick.fischer@iberopuebla.mx",
     carrera: "Ingenieria en mecatronica",
