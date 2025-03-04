@@ -23,5 +23,30 @@
             ],
             "autores": "global",
             "date": "10 de febrero de 2025"
-        }    ]
+        },
+        {
+            "folder": "practica3",
+            "title": "Wifi ESP32 – Thingspeak",
+            "description": "Conocer, identificar y comprobar el funcionamiento de la plataforma Thingspeak con el módulo NodeMCU ESP8266 o ESP32. ",
+            "coverImage": "img/portada_practica3.png",
+            "badges": [
+                "Electrónica",
+                "Redes digitales"
+            ],
+            "autores": "global",
+            "date": "17 de febrero de 2025"
+        },
+        {
+            "folder": "practica4",
+            "title": "BACKEND - NUBE: RECOLECCIÓN DE DATOS",
+            "description": "Crear un API para el procesamiento y almacenamiento de los datos en la nube ",
+            "coverImage": "img/portada_practica3.png",
+            "badges": [
+                "Electrónica",
+                "Redes digitales"
+            ],
+            "autores": "global",
+            "date": "24 de febrero de 2025"
+        }
+    ]
 }

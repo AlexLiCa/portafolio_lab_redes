@@ -6,13 +6,13 @@ const autoresGlobales = [
     carrera: "Ingenieria en sistemas computacionales",
   },
   {
-    name: "Erick",
+    name: "Erick Alberto Fischer Juárez",
     image: "assets/Erick.jpg",
     email: "erick.fischer@iberopuebla.mx",
     carrera: "Ingenieria en mecatronica",
   },
   {
-    name: "Lalo",
+    name: "Eduardo Chavez Varela",
     image: "assets/Lalo.jpg",
     email: "Lalo@ibero.mx",
     carrera: "Ingenieria en mecatronica",
